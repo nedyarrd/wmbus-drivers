@@ -11,7 +11,7 @@ struct Driver
 
 public:
   virtual esphome::optional<std::map<std::string, double>> get_values(std::vector<unsigned char> &telegram) = 0;
-  virtual esphome::optional<std::map<std::string, double>> get_values(std::vector<unsigned char> &telegram) = 0;
+  
 
   std::string get_name() { return this->driver_type_; };
 
