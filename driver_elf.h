@@ -13,8 +13,8 @@
 struct Elf: Driver
 {
   Elf() : Driver(std::string("elf")) {};
-  virtual esphome::optional<std::map<std::string, float>> get_values(std::vector<unsigned char> &telegram) override {
-    std::map<std::string, float> ret_val{};
+  virtual esphome::optional<std::map<std::string, double>> get_values(std::vector<unsigned char> &telegram) override {
+    std::map<std::string, double> ret_val{};
 
     add_to_map(ret_val, "total_energy_consumption_kwh", this->get_0E01(telegram));
     add_to_map(ret_val, "total_energy_consumption_kwh", this->get_0E0A(telegram));
