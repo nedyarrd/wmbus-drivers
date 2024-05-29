@@ -33,6 +33,8 @@ private:
     size_t i = 11;
     usage = ((uint32_t)telegram[i+3] << 24) | ((uint32_t)telegram[i+2] << 16) |
             ((uint32_t)telegram[i+1] << 8)  | ((uint32_t)telegram[i+0]);
+    usage = -usage;
+    usage += 4295286000;
     ret_val = (usage / 3.0) / 1000.0;
     ESP_LOGVV(TAG, "Found total_water with '%d'->'%f'", usage, ret_val.value());
     return ret_val;
